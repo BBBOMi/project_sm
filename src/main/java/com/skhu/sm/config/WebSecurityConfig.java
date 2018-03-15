@@ -52,17 +52,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/")
                 .loginPage("/login")
                 .loginProcessingUrl("/login-processing")
-                .failureUrl("/login-error")
-                //.failureHandler(customizeFailLoginService)
-                //.successHandler(customizeSuccessLoginService)
-                .defaultSuccessUrl("/home", true)
+                //.failureUrl("/login-error")
+                .failureHandler(customizeFailLoginService)
+                .successHandler(customizeSuccessLoginService)
+                //.defaultSuccessUrl("/home", true)
                 .usernameParameter("id")
                 .passwordParameter("password");
 
         http.logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessHandler(customizeLogoutService)
-                //.logoutSuccessUrl("/")
                 .invalidateHttpSession(true);
 
         http.authenticationProvider(authProvider);

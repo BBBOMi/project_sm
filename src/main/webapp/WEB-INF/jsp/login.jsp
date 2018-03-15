@@ -2,6 +2,7 @@
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+
 <!DOCTYPE HTML>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -32,7 +33,8 @@
             <div class="inner">
                 <h1>SM System</h1>
 
-                <p><c:if test="${loginError}">아이디/비밀번호가 잘못되었습니다.</c:if></p>
+
+                <p><%=request.getAttribute("error")%></p>
                 <p><c:if test="${findError}">비밀번호 초기화 실패</c:if></p>
                 <form method="post" action="/login-processing">
                     <label>

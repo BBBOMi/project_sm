@@ -6,6 +6,8 @@ import com.skhu.sm.mapper.UserMapper;
 import com.skhu.sm.repository.LoginRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.DefaultRedirectStrategy;
+import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
 
@@ -30,7 +32,9 @@ public class CustomizeFailLoginService implements AuthenticationFailureHandler {
     private final String NOUSER = "등록된 사용자가 아닙니다.";
     private final String NOTIDPW = "아이디/비밀번호가 잘못되었습니다.";
     private final String NOWLOGIN = "현재 접속중입니다.";
-    private final String defaultFailureUrl = "login-error";
+    private final String defaultFailureUrl = "/login-error";
+
+    private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 
     @Override
     public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
@@ -39,18 +43,20 @@ public class CustomizeFailLoginService implements AuthenticationFailureHandler {
         final String pw = httpServletRequest.getParameter("password");
 
         User user = userMapper.findByUid(id);
+
         if(user == null) {
-            httpServletRequest.setAttribute(NOUSER, e.getMessage());
-            httpServletRequest.getRequestDispatcher(defaultFailureUrl).forward(httpServletRequest, httpServletResponse);
-        }
-        if(!user.getU_password().equals(pw)) {
-            httpServletRequest.setAttribute(NOTIDPW, e.getMessage());
-            httpServletRequest.getRequestDispatcher(defaultFailureUrl).forward(httpServletRequest, httpServletResponse);
-        }
-        Login login = loginRepository.findOne(user.getID());
-        if(login != null) {
-            httpServletRequest.setAttribute(NOWLOGIN, e.getMessage());
-            httpServletRequest.getRequestDispatcher(defaultFailureUrl).forward(httpServletRequest, httpServletResponse);
+            httpServletRequest.setAttribute("error", NOUSER);
+            httpServletRequest.getRequestDispatcher("/login-error").forward(httpServletRequest, httpServletResponse);
+        }else {
+            if(!user.getU_password().equals(pw)) {
+                httpServletRequest.setAttribute("error", NOTIDPW);
+                httpServletRequest.getRequestDispatcher("/login-error").forward(httpServletRequest, httpServletResponse);
+            }
+            Login login = loginRepository.findOne(user.getID());
+            if(login != null) {
+                httpServletRequest.setAttribute("error", NOWLOGIN);
+                httpServletRequest.getRequestDispatcher("/login-error").forward(httpServletRequest, httpServletResponse);
+            }
         }
     }
 }

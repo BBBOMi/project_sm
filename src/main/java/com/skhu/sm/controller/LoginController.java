@@ -28,7 +28,8 @@ public class LoginController {
 
     //메인(로그인) 페이지
     @GetMapping(value = {"", "/login"})
-    public String login(Model model) {
+    public String login(Model model, HttpServletRequest request) {
+        request.setAttribute("error", "");
         model.addAttribute("loginError", false);
         model.addAttribute("findError", false);
         return "login";
@@ -39,6 +40,11 @@ public class LoginController {
     public String loginError(Model model) {
         model.addAttribute("loginError", true);
         model.addAttribute("findError", false);
+        return "login";
+    }
+
+    @PostMapping("login-error")
+    public String loginError2(Model model) {
         return "login";
     }
 
