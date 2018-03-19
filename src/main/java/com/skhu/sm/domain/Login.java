@@ -21,9 +21,11 @@ import java.io.Serializable;
 public class Login implements Serializable{
 
     @Id
-    private @Indexed int ID;
+    private int ID;
 
-    private int u_id;
+    @Indexed
+    private  int u_id;
+
     private String name;
     private String type;
 

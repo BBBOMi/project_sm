@@ -100,11 +100,7 @@
             <artifactId>spring-boot-starter-mail</artifactId>
             <version>1.5.7.RELEASE</version>
         </dependency>
-		<!-- AWS -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-aws</artifactId>
-		</dependency>
+
         <!-- redis -->
         <dependency>
             <groupId>redis.clients</groupId>
@@ -114,19 +110,27 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+
+
+
+        <!-- AWS -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-aws</artifactId>
+        </dependency>
 	</dependencies>
 
 	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-aws</artifactId>
-				<version>1.2.1.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-aws</artifactId>
+                <version>1.2.1.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 	<build>
 		<plugins>
