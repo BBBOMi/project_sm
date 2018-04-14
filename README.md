@@ -14,13 +14,13 @@
 
 ![db.png](https://github.com/bghgu/project_sm/blob/master/image/db.jpg)
 
-RED 다이어그램
+RE 다이어그램
 
 ## 구성
 
 ![1.png](https://github.com/bghgu/project_sm/blob/master/image/1.png)
 
-## 1. 시작하기
+## 시작하기
 
 모든 소스코드는 IntelliJ + Window10 + JAVA 8 환경에서 작성되었습니다.
 
