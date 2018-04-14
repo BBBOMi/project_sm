@@ -1,12 +1,16 @@
 # project_sm
 
+
+
 성공회대학교 멘토링 시스템
 
 프로젝트 기간 : 2017년 9월 ~ 2017년 12월
 
 맡은 역할 : PM, 프론트 엔드 개발, 백 엔드 서버 개발, DB 모델링, 배포
 
-사용 기술 : Spring-boot, jsp, MyBatis
+사용 기술 : Spring-boot, jsp, MyBatis, AWS
+
+RED 다이어그램
 
 ## 1. 시작하기
 
@@ -122,11 +126,14 @@
 ```
 ## 실행하기
 
-window 10 환경
+모든 소스코드는 Intellij + Windows10 + java 8 환경에서 작성되었습니다.
 
 - `jdk8` 과 `maven` 을 설치합니다.
 - `JAVA_JOME` 환경변수 설정을 합니다.
-- `Path`에 `maven` 환경변수 설정을 합니다.spring boot 앱 실행
+- `Path`에 `maven` 환경변수 설정을 합니다.
+- 내장 톰캣을 이용해 서버를 배포 합니다.
+- spring boot 앱 실행
+- `application.properties` 파일이 필요합니다.
 
 ```
 mvn spring-boot:run
@@ -138,17 +145,14 @@ mvn spring-boot:run
 AWS EC2 Ubuntu 환경
 
 - `jdk8` 과 `maven` 을 설치합니다.
-
-백 그라운드 spring boot 앱 실행
-
-내장 톰캣을 이용해 서버를 배포 합니다.
+- 내장 톰캣을 이용해 서버를 배포 합니다.
+- 백 그라운드 spring boot 앱 실행
 
 ```
 nohup mvn spring-boot:run&
 ```
 
 - 중지하려면,  `netstat -tnlp` 명령어를 통해 프로세스를 kill 하십시오.
-- `application.properties` 파일이 필요합니다.
 
 ## 배포
 
