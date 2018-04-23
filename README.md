@@ -190,7 +190,7 @@ nohup mvn spring-boot:run&
 * **배다슬** - [bghgu](https://github.com/bghgu)
 * **국중서**
 * **주상원**
-* **김보미**
+* **김보미** - [BBBOMi](https://github.com/BBBOMi)
 * **박소희** 
 
 
