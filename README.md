@@ -6,7 +6,7 @@
 
 프로젝트 기간 : 2017년 9월 ~ 2017년 12월
 
-맡은 역할 : PM, 프론트 엔드 개발, 백 엔드 서버 개발, DB 모델링, 배포
+맡은 역할 : Front-end 개발, Back-end 개발, DB 모델링
 
 [SM 사업 시스템 작품제안서](https://github.com/bghgu/project_sm/blob/master/SM%EC%82%AC%EC%97%85%20%EC%8B%9C%EC%8A%A4%ED%85%9C_%EC%9E%91%ED%92%88%EC%A0%9C%EC%95%88%EC%84%9C.pdf) - 작품 제안서
 
