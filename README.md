@@ -10,7 +10,7 @@
 
 [SM 사업 시스템 작품제안서](https://github.com/bghgu/project_sm/blob/master/SM%EC%82%AC%EC%97%85%20%EC%8B%9C%EC%8A%A4%ED%85%9C_%EC%9E%91%ED%92%88%EC%A0%9C%EC%95%88%EC%84%9C.pdf) - 작품 제안서
 
-사용 기술 : Spring-boot, jsp, MyBatis, AWS
+사용 기술 : Spring-boot, JSP, MySQL, MyBatis, AWS(EC2, RDS, S3)
 
 ![db.png](https://github.com/bghgu/project_sm/blob/master/image/db.jpg)
 
@@ -205,7 +205,7 @@ nohup mvn spring-boot:run&
 
 ## 수상
 
-- 2018년 제 10회 소프트웨어공학과 경진대회 지정주제 부분 3위
+- 2018년 제 10회 소프트웨어공학과 경진대회 지정주제 부 3위
 
 ---
 
